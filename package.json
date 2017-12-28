@@ -1,0 +1,42 @@
+{
+  "name": "dash-up",
+  "version": "0.1.0",
+  "description": "Merge dash cam videos and upload to Youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inDream/dash-up.git"
+  },
+  "keywords": [
+    "dashcam",
+    "mp4",
+    "merge",
+    "ffmpeg",
+    "youtube"
+  ],
+  "author": "inDream",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inDream/dash-up/issues"
+  },
+  "homepage": "https://github.com/inDream/dash-up#readme",
+  "dependencies": {
+    "electron": "^1.7.10",
+    "fastify": "^0.37.0",
+    "fastify-static": "^0.5.0",
+    "ffmpeg-static": "^2.1.0",
+    "get-port": "^3.2.0",
+    "jquery": "^3.2.1",
+    "node-youtube-resumable-upload": "^0.2.1",
+    "sortablejs": "^1.7.0",
+    "youtube-api": "^2.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/mini-default.min.css">
+  <title>Dash Up</title>
+  <style>
+    .right {
+      text-align: right;
+    }
+    h1 {
+      text-align: center;
+    }
+    #drag {
+      display: flex;
+      height: 100px;
+      background: #ccc;
+      align-items: center;
+    }
+    #drag div {
+      width: 100%;
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+    }
+
+    #items {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 1px;
+      padding: 5px 10px;
+    }
+    .sortable-ghost {
+      opacity: .6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dash Up</h1>
+  <div></div>
+  <form id="uploadForm" action="/upload" method="POST">
+    <div id="drag">
+      <div class="text-center">
+        <p>Drag mp4 / mov files or folders here</p>
+      </div>
+    </div>
+    <fieldset>
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+          <label for="title">Title</label>
+        </div>
+        <div class="col-sm-12 col-md">
+          <input name="title" id="title" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+          <label for="description">Description</label>
+        </div>
+        <div class="col-sm-12 col-md">
+          <textarea name="description" id="description"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+          <label for="privacy1">Privacy</label>
+        </div>
+        <div class="col-sm-12 col-md">
+          <div class="input-group">
+            <input name="privacy" type="radio" id="privacy1" required value="public">
+            <label for="privacy1">Public</label>
+            <input name="privacy" type="radio" id="privacy2" required value="unlisted">
+            <label for="privacy2">Unlisted</label>
+            <input name="privacy" type="radio" id="privacy3" required value="private">
+            <label for="privacy3">Private</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div id="list">
+      File list:
+      <ul id="items"></ul>
+    </div>
+    <p id="message"></p>
+    <progress id="progress" max="100"></progress>
+    <div class="row">
+      <div class="col-sm-6">
+        <button id="uploadBtn">Upload</button>
+      </div>
+      <div class="col-sm-6 right">
+        <button id="resetBtn" type="reset">Reset</button>
+      </div>
+    </div>
+  </form>
+  <script src="/main.js"></script>
+</body>
+</html>
